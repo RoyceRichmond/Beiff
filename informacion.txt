@@ -1,0 +1,5 @@
+https://www.linkedin.com/pulse/calculating-distances-using-python-google-maps-r%C3%A9gis-nisengwe/?articleId=6625061973447053312
+https://github.com/googlemaps/google-maps-services-python
+https://developers.google.com/maps/documentation/directions/intro?hl=es
+https://developers.google.com/maps/documentation/embed/guide#directions_mode
+https://rutg3r.com/measure-road-duration-distance-multiple-addresses/
