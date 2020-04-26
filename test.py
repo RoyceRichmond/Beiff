@@ -46,12 +46,21 @@ HTML = """
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: LATITUD, lng: LONGITUD },
-          zoom: 16
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          disableDoubleClickZoom: true,
+          draggable: false,
+          scrollwheel: false,
+          panControl: false,
+          disableDefaultUI: true,
+          styles: [{
+            "stylers": [{
+                "visibility": "off"
+            }]
+          }]                    
         });
-
         var trafficLayer = new google.maps.TrafficLayer();
         trafficLayer.setMap(map);
-        
       }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdTg2ovTM9YZ_wOJJt0aGkjfAM4wSAm3Y&callback=initMap"
