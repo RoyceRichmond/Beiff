@@ -5,16 +5,15 @@ import time
 import os
 import datetime
 
-stations =[{
-    "latitud": 19.503664,
-    "longitud": -99.13222,
-    "name": "estacion1"
-  },{
-    "latitud": 19.6529727,
-    "longitud": -99.1977184,
-    "name":  "estacion2"
-  },
-]
+stations = [{
+  "latitud": 19.503664,
+  "longitud": -99.13222,
+  "name": "estacion1"
+}, {
+  "latitud": 19.6529727,
+  "longitud": -99.1977184,
+  "name": "estacion2"
+}, ]
 
 
 modifiers =[{
@@ -96,29 +95,29 @@ HTML = """
 </html>
 """
 def save_images():
-	driver = webdriver.Firefox()
-	driver.set_window_size(1920, 1080)
-	for station in stations:
-		HTMLNew = HTML.replace("LATITUD",str(station["latitud"])).replace("LONGITUD",str(station["longitud"])).replace("TRAFIC","var trafficLayer = new google.maps.TrafficLayer();").replace("SETTRAFIC","trafficLayer.setMap(map);")
-  		file = open(".graphStation.html","w")
-  		file.write(HTMLNew)
-  		file.close()
-  		driver.get("file://{}/.graphStation.html".format(os.getcwd()))
-  		time.sleep(5)
-  		#filename = datetime.datetime.now().strftime("%d-%m-%YT%H-%M-%S")
-		#driver.save_screenshot(station["name"]+"_"+filename+".png") 
-	driver.close()
+  driver = webdriver.Firefox()
+  driver.set_window_size(1920, 1080)
+  for station in stations:
+    HTMLNew = HTML.replace("LATITUD", str(station["latitud"])).replace("LONGITUD", str(station["longitud"])).replace("TRAFIC", "var trafficLayer = new google.maps.TrafficLayer();").replace("SETTRAFIC", "trafficLayer.setMap(map);")
+    file = open(".graphStation.html", "w")
+    file.write(HTMLNew)
+    file.close()
+    driver.get("file://{}/.graphStation.html".format(os.getcwd()))
+    time.sleep(5)
+    # filename = datetime.datetime.now().strftime("%d-%m-%YT%H-%M-%S")
+    # driver.save_screenshot(station["name"] + "_" + filename + ".png")
+  driver.close()
 
 def save_segmentation():
-	driver = webdriver.Firefox()
-	driver.set_window_size(1920, 1080)
-	for station in (4*stations):
-		HTMLNew = HTML.replace("LATITUD",str(station["latitud"])).replace("LONGITUD",str(station["longitud"])).replace("FEATURE",str(station["featureType"])).replace("ELEMENTTYPE",str(station["elementType"])).replace("STYLERS",str(station["stylers"])).replace("TRAFIC","").replace("SETTRAFIC","")
-  		file = open(".graphStation.html","w")
-  		file.write(HTMLNew)
-  		file.close()
-  		driver.get("file://{}/.graphStation.html".format(os.getcwd()))
-  		time.sleep(7)
-  		#filename = datetime.datetime.now().strftime("%d-%m-%YT%H-%M-%S")
-		#driver.save_screenshot(station["name"]+"_"+filename+".png") 
-	driver.close()  
+  driver = webdriver.Firefox()
+  driver.set_window_size(1920, 1080)
+  for station in stations:
+    HTMLNew=HTML.replace("LATITUD",str(station["latitud"])).replace("LONGITUD",str(station["longitud"])).replace("FEATURE",str(station["featureType"])).replace("ELEMENTTYPE",str(station["elementType"])).replace("STYLERS",str(station["stylers"])).replace("TRAFIC","").replace("SETTRAFIC","")
+    file = open(".graphStation.html", "w")
+    file.write(HTMLNew)
+    file.close()
+    driver.get("file://{}/.graphStation.html".format(os.getcwd()))
+    time.sleep(5)
+    # filename = datetime.datetime.now().strftime("%d-%m-%YT%H-%M-%S")
+    # driver.save_screenshot(station["name"] + "_" + filename + ".png")
+  driver.close()
