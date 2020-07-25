@@ -1,14 +1,15 @@
 from PIL import Image
+from numpy import asarray
 constant =100/46
 path="D:/Users/Richmond/Desktop/Proyecto.Aire/codigo/fernando/"
 def contarArea(pathImage):
   mask = Image.open(pathImage+'1.png')
   im = Image.open(pathImage+'original.png')
   colores = {
-    "gris":  {"RGB": (228,227,223), "contador": 0,"porcentaje":0},
-    "azul":  {"RGB": (0,18,252), "contador": 0,"porcentaje":0},
-    "blanco": {"RGB": (252,252,252), "contador": 0,"porcentaje":0},
-    "amarillo": {"RGB": (255,240,0), "contador": 0,"porcentaje":0},
+    "rapido":  {"RGB": (100,215,104), "contador": 0,"porcentaje":0},
+    "medio":  {"RGB": (255,151,76), "contador": 0,"porcentaje":0},
+    "disminuido": {"RGB": (243,60,48), "contador": 0,"porcentaje":0},
+    "lento": {"RGB": (128,32,32), "contador": 0,"porcentaje":0},
   }
   counterPixels = 0
   tolerancia = 5
