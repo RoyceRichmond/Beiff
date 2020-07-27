@@ -21,3 +21,15 @@ JavaScript error: resource://gre/modules/URIFixup.jsm, line 281: NS_ERROR_FAILUR
 1595889071703	Marionette	WARN	TLS certificate errors will be ignored for this session
 JavaScript error: resource://gre/modules/URIFixup.jsm, line 281: NS_ERROR_FAILURE: Should pass a non-null uri
 1595889083873	Marionette	INFO	Stopped listening on port 42655
+1595889898963	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileKGAQcl"
+1595889903055	Marionette	INFO	Listening on port 41949
+1595889903093	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 281: NS_ERROR_FAILURE: Should pass a non-null uri
+1595889915062	Marionette	INFO	Stopped listening on port 41949
+1595889993818	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile56f85Y"
+1595889997809	Marionette	INFO	Listening on port 42133
+1595889997836	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 281: NS_ERROR_FAILURE: Should pass a non-null uri
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
