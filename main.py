@@ -1,3 +1,3 @@
-import getim
-#getim.save_images()
-getim.save_segmentation()
+import get_image_streets
+get_image_streets.save_segmentation()
+get_image_streets.save_images()
