@@ -11,3 +11,5 @@ sudo pip3 install matplotlib
 echo "installed matplotlib"
 sudo pip3 install opencv-python
 echo "installed opencv"
+sudo pip3 install Pillow
+echo "installed Pillow"
