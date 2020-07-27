@@ -2,7 +2,6 @@ import cv2
 import numpy as np
 from matplotlib import cm
 from PIL import Image
-constant =100/46
 #a=carreteras
 #b=avenida principal
 #c=calles secundarias
@@ -21,8 +20,8 @@ def process_images(path):
     #mask operation to separate areas of interest
     masked = cv2.bitwise_and(img2, img2, mask = mask)
     #optional code to display the images, it waits for a user input to proceed with the next image
-    cv2.imshow("Mask Applied to Image", masked)
-    cv2.waitKey(0)
+    #cv2.imshow("Mask Applied to Image", masked)
+    #cv2.waitKey(0)
     #conversion of the image to PILImage format
     im_rgb = cv2.cvtColor(masked, cv2.COLOR_BGR2RGB)
     conv=Image.fromarray(im_rgb)
@@ -32,10 +31,10 @@ def process_images(path):
 def contarArea(pathImage):
   im = pathImage
   colores = {
-    "rapido":  {"RGB": (100,215,104), "contador": 0,"porcentaje":0},
-    "medio":  {"RGB": (255,151,76), "contador": 0,"porcentaje":0},
-    "disminuido": {"RGB": (243,60,48), "contador": 0,"porcentaje":0},
-    "lento": {"RGB": (128,32,32), "contador": 0,"porcentaje":0},
+    "rapido":     {"RGB": (100,215,104), "contador": 0},
+    "medio":      {"RGB": (255,151,76),  "contador": 0},
+    "disminuido": {"RGB": (243,60,48),   "contador": 0},
+    "lento":      {"RGB": (128,32,32),   "contador": 0},
   }
   counterPixels = 0
   tolerancia = 5
@@ -49,12 +48,23 @@ def contarArea(pathImage):
       if verificador:
         colores[color]["contador"] += 1 
     counterPixels += 1
-  #Añadir porcentaje
-  for color in colores:
-    colores[color]["porcentaje"] = 100*colores[color]["contador"]/counterPixels 
   return colores
 
 def imprimirResultado(resultado):
   for color in resultado:
     print(color,resultado[color]['contador'])
 
+def distancias(vector):
+  c =100/46
+  equivalences=[c/4,c/3,c/1]  
+  rapido=0
+  medio=0
+  disminuido=0
+  lento=0
+  for b in range(0,3):
+    resultado = contarArea(vector[b])
+    rapido+=resultado['rapido']['contador']*equivalences[b]
+    medio+=resultado['medio']['contador']*equivalences[b]
+    disminuido+=resultado['disminuido']['contador']*equivalences[b]
+    lento+=resultado['lento']['contador']*equivalences[b]
+  return [rapido,medio,disminuido,lento]

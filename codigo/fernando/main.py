@@ -1,10 +1,13 @@
 from opencv import *
-#path for the images, this can be changed further
-path="D:/Users/Richmond/Desktop/Proyecto.Aire/codigo/fernando/"
-index='1'
-masked=process_images(path+index)
+masked=[]
+for a in range(1,4):
+  masked.append(process_images(str(a))) #appends the 3 masks of the streets      #a=carreteras        #b=avenida principal       #c=calles secundarias
+#for a in range(0,3):
+#  for b in range(0,3):
+#    resultado = contarArea(masked[a][b])
+#    print("pixeles en el area de interes")
+#    imprimirResultado(resultado)
+#    print('\n')
 for a in range(0,3):
-  resultado = contarArea(masked[a])
-  print("pixeles en el area de interes")
-  imprimirResultado(resultado)
+  print(distancias(masked[a]))
   print('\n')
