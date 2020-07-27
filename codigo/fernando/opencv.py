@@ -67,4 +67,4 @@ def distancias(vector):
     medio+=resultado['medio']['contador']*equivalences[b]
     disminuido+=resultado['disminuido']['contador']*equivalences[b]
     lento+=resultado['lento']['contador']*equivalences[b]
-  return [rapido,medio,disminuido,lento]
+  return [rapido*0.9,medio*0.9,disminuido*0.9,lento*0.9]

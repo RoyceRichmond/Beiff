@@ -236,7 +236,7 @@ def save_images():
     file.write(HTMLNew)
     file.close()
     driver.get("file://{}/.graphStation.html".format(os.getcwd()))
-    time.sleep(7)
+    time.sleep(3)
     #filename = datetime.datetime.now().strftime("%d-%m-%YT%H-%M-%S")
     #driver.save_screenshot(station["name"] + "_" + filename + ".png")
     driver.save_screenshot(station["name"]+".png")
@@ -256,7 +256,7 @@ def save_segmentation():
       file.write(HTMLNew)
       file.close()
       driver.get("file://{}/.graphStation.html".format(os.getcwd()))
-      time.sleep(7)
+      time.sleep(3)
       #filename = datetime.datetime.now().strftime("%d-%m-%YT%H-%M-%S")
       if a!=0:
         driver.save_screenshot(station["name"]+chr(96+a)+".png")
