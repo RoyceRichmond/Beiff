@@ -13,3 +13,5 @@ sudo pip3 install opencv-python
 echo "installed opencv"
 sudo pip3 install Pillow
 echo "installed Pillow"
+sudo pip3 install schedule
+echo "installed schedule"
